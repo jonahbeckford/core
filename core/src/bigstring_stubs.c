@@ -11,7 +11,9 @@
 #endif
 
 #include <string.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 #include <errno.h>
 #include <assert.h>
 #include <stdint.h>
@@ -36,7 +38,9 @@
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 #include <sys/endian.h>
 #else
+#ifndef _MSC_VER
 #include <endian.h>
+#endif
 #endif
 #define __BYTE_ORDER    _BYTE_ORDER
 #define __LITTLE_ENDIAN _LITTLE_ENDIAN
